@@ -8,7 +8,7 @@ dotenv.config();
 const PORT = process.env.PORT || 3000;
 
 const app = express();
-app.use(pino());
+app.use(pino({prettyPrint: true}));
 app.use(express.json());
 app.use(cors());
 
