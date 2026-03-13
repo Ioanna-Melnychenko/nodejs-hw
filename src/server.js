@@ -1,6 +1,5 @@
 import express from 'express';
 import dotenv from 'dotenv';
-import pino from 'pino-http';
 import cors from 'cors';
 import { connectMongoDB } from './db/connectMongoDB.js';
 import { logger } from './middleware/logger.js';
@@ -14,7 +13,6 @@ const PORT = process.env.PORT || 3000;
 
 const app = express();
 app.use(logger);
-app.use(pino());
 app.use(express.json(
   {type: ['application/json', 'application/vnd.api+json'],}
 ));
